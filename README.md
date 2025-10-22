@@ -25,4 +25,13 @@ This project is an **IoT-based LED control system** where an Android app interac
 ---
 
 ## Project Structure
+├── AndroidApp/
+│ ├── app/src/main/java/... (Kotlin source files)
+│ ├── app/src/main/res/... (Layouts & resources)
+│ └── google-services.json (Firebase config)
+├── WokwiSimulation/
+│ ├── sketch.ino
+│ ├── diagram.json
+│ └── libraries.txt
+└── README.md
 
