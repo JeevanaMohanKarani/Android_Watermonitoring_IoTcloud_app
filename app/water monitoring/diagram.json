@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "author": "Jeevana Karani",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -206.5, "left": -14.6, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultra", "top": -209.7, "left": 341.5, "attrs": {} },
+    {
+      "type": "wokwi-button",
+      "id": "btnChlorine",
+      "top": 100,
+      "left": 180,
+      "attrs": { "color": "green", "label": "Chlorine" }
+    },
+    {
+      "type": "wokwi-button",
+      "id": "btnPipe",
+      "top": 170,
+      "left": 180,
+      "attrs": { "color": "red", "label": "Pipe Damage" }
+    },
+    { "type": "wokwi-mq135", "id": "gas", "top": 250, "left": 180, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -306.9,
+      "left": 205.8,
+      "attrs": { "temperature": "48.6", "humidity": "67.5" }
+    },
+    { "type": "wokwi-gas-sensor", "id": "gas1", "top": -102.9, "left": -204.2, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -13,
+      "left": 211.2,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 44.6,
+      "left": -105.6,
+      "attrs": { "color": "red", "xray": "1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "ultra:TRIG", "esp:2", "green", [] ],
+    [ "ultra:ECHO", "esp:4", "blue", [] ],
+    [ "ultra:VCC", "esp:3V3", "red", [ "h-249.6", "v105.6", "h-278.1" ] ],
+    [ "ultra:GND", "esp:GND", "black", [] ],
+    [ "btnChlorine:1.l", "esp:5", "green", [] ],
+    [ "btnChlorine:2.r", "esp:GND", "black", [] ],
+    [ "btnPipe:1.l", "esp:18", "red", [] ],
+    [ "btnPipe:2.r", "esp:GND", "black", [] ],
+    [ "gas:AO", "esp:VP", "orange", [] ],
+    [ "gas:VCC", "esp:3V3", "red", [] ],
+    [ "gas:GND", "esp:GND", "black", [] ],
+    [ "dht1:SDA", "esp:15", "yellow", [] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "h-105.6", "v144" ] ],
+    [ "dht1:GND", "esp:GND", "black", [] ],
+    [ "ultra:TRIG", "esp:D2", "green", [ "v0" ] ],
+    [ "ultra:ECHO", "esp:D4", "green", [ "v0" ] ],
+    [ "ultra:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "gas1:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "gas1:VCC", "esp:3V3", "red", [ "h0" ] ],
+    [ "gas1:AOUT", "esp:VP", "green", [ "v-86.4", "h57.6" ] ],
+    [ "dht1:SDA", "esp:D15", "green", [ "v0" ] ],
+    [ "dht1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "btn1:1.l", "esp:D5", "green", [ "v-124.8", "h-124.5" ] ],
+    [ "btn1:2.r", "esp:GND.2", "black", [ "v29", "h-287.8" ] ],
+    [ "btn2:1.l", "esp:D18", "green", [ "v-48", "h192.3" ] ],
+    [ "btn2:2.r", "esp:GND.2", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
