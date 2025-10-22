@@ -1,0 +1,10 @@
+# Wokwi Library List
+# See https://docs.wokwi.com/guides/libraries
+
+Adafruit SH110X
+DHT sensor library
+DHT22
+SimpleWiFiClient
+UniversalTelegramBot
+Firebase ESP32 Client
+ArduinoJson
